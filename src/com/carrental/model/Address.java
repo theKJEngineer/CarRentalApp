@@ -9,12 +9,17 @@ public class Address {
     private String houseNumber;
     private String city;
     private String zipCode;
+    private String country;
+    private String state;
 
-    public Address(String street, String houseNumber, String city, String zipCode) {
+
+    public Address(String street, String houseNumber, String city, String zipCode, String country, String state) {
         this.street = street;
         this.houseNumber = houseNumber;
         this.city = city;
         this.zipCode = zipCode;
+        this.country = country;
+        this.state = state;
     }
 
     // Getters and Setters
@@ -50,8 +55,26 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-    public String toString() {
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getFullAddress() {
         return
-        "Street: " + this.street + " House number: " + this.houseNumber + " City: " + this.city + " Zip code: " + this.zipCode;
+        "Street: " + this.street + " House number: " + this.houseNumber + " City: " + this.city + " Zip code: " + this.zipCode +
+                " State" + this.state + " Country:" + this.country;
+
     }
 }
