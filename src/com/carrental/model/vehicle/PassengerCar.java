@@ -1,3 +1,9 @@
+/*
+ Represents a concrete implementation of a vehicle designed for personal transport.
+ Extends the base abstraction to include specific attributes like seating capacity,
+ door count, and trunk size tailored for standard car rentals.
+ */
+
 package com.carrental.model.vehicle;
 
 public class PassengerCar extends Vehicle {
