@@ -1,8 +1,8 @@
 package com.carrental.model.vehicle;
 
-/**
- * Represents a base abstraction for all vehicles in the rental fleet.
- * Contains common properties shared by cars, motorcycles, and vans.
+/*
+ Represents a base abstraction for all vehicles in the rental fleet.
+ Contains common properties shared by cars, motorcycles, and vans.
  */
 
 public abstract class Vehicle {
@@ -60,9 +60,9 @@ public abstract class Vehicle {
         this.dailyRate = dailyRate;
     }
 
-    /**
-     * Marks the vehicle as rented (unavailable).
-     * If the vehicle is already rented, it prints a warning.
+    /*
+     Marks the vehicle as rented (unavailable).
+     If the vehicle is already rented, it prints a warning.
      */
     public void rent() {
         if (this.isAvailable) {
@@ -82,8 +82,10 @@ public abstract class Vehicle {
         }
     }
 
-    public String getDescription() {
-        return this.brand + " " + this.model + " " + this.productionYear;
+
+    public String toString() {
+        return "Brand: " + this.brand + "Model: " + this.model +
+                "Production year: " + this.productionYear + "Daily rate: " + this.dailyRate;
     }
 
     // Abstract methods - subclasses MUST implement these
@@ -96,8 +98,4 @@ public abstract class Vehicle {
 
     // The distance in kilometers between required maintenance services.
     public abstract int getServiceFrequency();
-
-
-
-
 }
