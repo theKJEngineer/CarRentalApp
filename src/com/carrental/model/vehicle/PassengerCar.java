@@ -63,6 +63,8 @@ public class PassengerCar extends Vehicle {
     public String toString() {
         return
                 super.toString()
-                + " " + this.fuelType + " " + this.transmission + " " + this.numberOfDoors + " " + this.numberOfSeats;
+                + "Fuel type: " + this.fuelType + "Transmission " +
+                        this.transmission + "Number of doors: " +
+                        this.numberOfDoors + "Number of seats: " + this.numberOfSeats;
     }
 }
