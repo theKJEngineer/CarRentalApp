@@ -11,16 +11,14 @@ public class Motorcycle extends Vehicle {
     private int engineDisplacement;
     private String type;
     private boolean hasTopCase;
-    private double fuelConsumption;
 
     public Motorcycle(String brand, String model, String licensePlate,
-                      int productionYear, double mileage, double dailyRate,
-                      int engineDisplacement, String type, boolean hasTopCase, double fuelConsumption) {
-        super(brand, model, licensePlate, productionYear, mileage, dailyRate);
+                      int productionYear, double mileage, double dailyRate, double fuelConsumption,
+                      int engineDisplacement, String type, boolean hasTopCase) {
+        super(brand, model, licensePlate, productionYear, mileage, dailyRate, fuelConsumption);
         this.engineDisplacement = engineDisplacement;
         this.type = type;
         this.hasTopCase = hasTopCase;
-        this.fuelConsumption = fuelConsumption;
     }
 
     public void setHasTopCase(boolean hasTopCase) {
@@ -41,7 +39,7 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public double getFuelEfficiency() {
-        return this.fuelConsumption;
+        return this.getFuelConsumption();
     }
 
     @Override
@@ -57,8 +55,10 @@ public class Motorcycle extends Vehicle {
     @Override
     public String toString() {
         return
-        super.toString()
-                + "Engine displacement: " + this.engineDisplacement + "Type " + this.type + "Has top case: " + this.hasTopCase;
+        super.toString() +
+                " Engine displacement: " + this.engineDisplacement +
+                " Type " + this.type +
+                " Has top case: " + this.hasTopCase;
 
     }
 }

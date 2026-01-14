@@ -11,18 +11,17 @@ public class PassengerCar extends Vehicle {
     private String transmission;
     private int numberOfDoors;
     private int numberOfSeats;
-    private double fuelConsumption;
 
     public PassengerCar(String brand, String model, String licensePlate,
-                        int productionYear, double mileage, double dailyRate,
+                        int productionYear, double mileage, double dailyRate,double fuelConsumption,
                         String fuelType, String transmission, int numberOfDors,
-                        int numberOfSeats, double fuelConsumption) {
-        super(brand, model, licensePlate, productionYear, mileage, dailyRate);
+                        int numberOfSeats) {
+        super(brand, model, licensePlate, productionYear, mileage, dailyRate, fuelConsumption);
         this.fuelType = fuelType;
         this.transmission = transmission;
         this.numberOfDoors = numberOfDors;
         this.numberOfSeats = numberOfSeats;
-        this.fuelConsumption = fuelConsumption;
+
     }
 
     public String getFuelType() {
@@ -41,13 +40,10 @@ public class PassengerCar extends Vehicle {
         return numberOfSeats;
     }
 
-    public double getFuelConsumption() {
-        return fuelConsumption;
-    }
 
     @Override
     public double getFuelEfficiency() {
-        return  this.fuelConsumption;
+        return  this.getFuelConsumption();
     }
 
     @Override
@@ -62,9 +58,10 @@ public class PassengerCar extends Vehicle {
     @Override
     public String toString() {
         return
-                super.toString()
-                + "Fuel type: " + this.fuelType + "Transmission " +
-                        this.transmission + "Number of doors: " +
-                        this.numberOfDoors + "Number of seats: " + this.numberOfSeats;
+                super.toString() +
+                        " Fuel type: " + this.fuelType +
+                        " Transmission " + this.transmission +
+                        " Number of doors: " + this.numberOfDoors +
+                        " Number of seats: " + this.numberOfSeats;
     }
 }

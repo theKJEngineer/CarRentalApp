@@ -14,10 +14,11 @@ public abstract class Vehicle {
     // price per day
     private double dailyRate;
     private boolean isAvailable;
+    private double fuelConsumption;
 
 
     public Vehicle(String brand, String model, String licensePlate,
-                   int productionYear, double mileage, double dailyRate) {
+                   int productionYear, double mileage, double dailyRate, double fuelConsumption) {
         this.brand = brand;
         this.model = model;
         this.licensePlate = licensePlate;
@@ -25,6 +26,11 @@ public abstract class Vehicle {
         this.mileage = mileage;
         this.dailyRate = dailyRate;
         this.isAvailable = true;
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public double getFuelConsumption() {
+        return fuelConsumption;
     }
 
     public String getBrand() {
@@ -84,8 +90,10 @@ public abstract class Vehicle {
 
 
     public String toString() {
-        return "Brand: " + this.brand + "Model: " + this.model +
-                "Production year: " + this.productionYear + "Daily rate: " + this.dailyRate;
+        return "Brand: " + this.brand +
+                " Model: " + this.model +
+                " Production year: " + this.productionYear +
+                " Daily rate: " + this.dailyRate;
     }
 
     // Abstract methods - subclasses MUST implement these
