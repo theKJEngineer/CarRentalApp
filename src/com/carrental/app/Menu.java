@@ -11,6 +11,11 @@ import com.carrental.model.vehicle.PassengerCar;
 import com.carrental.model.vehicle.Vehicle;
 import java.util.Scanner;
 
+/*
+ * Handles the textual user interface (CLI) for the application.
+ * Orchestrates interactions between the user (input) and the RentalAgency logic (backend).
+ */
+
 public class Menu {
     private RentalAgency agency;
     private Scanner scanner;
@@ -59,6 +64,10 @@ public class Menu {
         }
     }
 
+    /*
+     * Walks the user through the vehicle rental process.
+     * Collects Client and Address data, selects a vehicle, and attempts the transaction.
+     */
     private void handleRent() {
         System.out.println("\n--- RENT A VEHICLE ---");
 
@@ -134,6 +143,10 @@ public class Menu {
         }
     }
 
+    /*
+     * Pre-populates the system with a diverse set of vehicles.
+     * Useful for testing without entering data manually every time.
+     */
     private void initializeData() {
         agency.addVehicle(new PassengerCar("Toyota", "Corolla", "WA12345", 2022, 50000, 150.0, 6.5, "Petrol", "Manual", 5, 5));
         agency.addVehicle(new Motorcycle("Yamaha", "MT-07", "WB9999", 2023, 5000, 100.0, 4.5, 689, "Naked", false));
