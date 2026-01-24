@@ -5,6 +5,8 @@ package com.carrental.model.vehicle;
  Contains common properties shared by cars, motorcycles, and vans.
  */
 
+import com.carrental.util.VehicleStatus;
+
 public abstract class Vehicle {
     private String brand;
     private String model;
@@ -13,7 +15,7 @@ public abstract class Vehicle {
     private double mileage;
     // price per day
     private double dailyRate;
-    private boolean isAvailable;
+    private VehicleStatus status;
     private double fuelConsumption;
 
 
@@ -25,7 +27,7 @@ public abstract class Vehicle {
         this.productionYear = productionYear;
         this.mileage = mileage;
         this.dailyRate = dailyRate;
-        this.isAvailable = true;
+        this.status = VehicleStatus.AVAILABLE;
         this.fuelConsumption = fuelConsumption;
     }
 
@@ -57,13 +59,13 @@ public abstract class Vehicle {
         return dailyRate;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-
     // instead of set method setting the daily rate
     public void setDailyRate(double dailyRate) {
         this.dailyRate = dailyRate;
+    }
+
+    public VehicleStatus getStatus() {
+        return this.status;
     }
 
     /*
@@ -71,15 +73,15 @@ public abstract class Vehicle {
      If the vehicle is already rented, it prints a warning.
      */
     public void rent() {
-        if (this.isAvailable) {
-            this.isAvailable = false;
+        if (this.status == VehicleStatus.AVAILABLE) {
+            this.status = VehicleStatus.RENTED;
         } else {
-            System.out.println("The car is rented and unavailable.");
+            System.out.println("The car is not available (Status: " + this.status + ")");
         }
     }
 
     public void returnVehicle() {
-        this.isAvailable = true;
+        this.status = VehicleStatus.AVAILABLE;
     }
 
     public void updateMileage(double distanceDriven) {
