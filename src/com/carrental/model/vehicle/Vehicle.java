@@ -76,7 +76,7 @@ public abstract class Vehicle {
         if (this.status == VehicleStatus.AVAILABLE) {
             this.status = VehicleStatus.RENTED;
         } else {
-            System.out.println("The car is not available (Status: " + this.status + ")");
+            System.out.println("The car is rented or unavailable.");
         }
     }
 
@@ -92,7 +92,9 @@ public abstract class Vehicle {
 
 
     public String toString() {
-        return "Brand: " + this.brand +
+        // Dodajemy [STATUS] na początku
+        return "[" + this.status + "] " +
+                "Brand: " + this.brand +
                 " Model: " + this.model +
                 " Production year: " + this.productionYear +
                 " Daily rate: " + this.dailyRate;

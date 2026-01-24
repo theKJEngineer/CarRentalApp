@@ -74,4 +74,8 @@ public class RentalAgency {
         }
         System.out.println("--------------------\n");
     }
+
+    public List<Vehicle> getFleet() {
+        return fleet;
+    }
 }
